@@ -1,0 +1,40 @@
+<div class='container-fluid'>
+  <div class='row'>
+    
+    <div class='col-sm-9 body-content'>
+      <br/>
+      <h3>Import Excel and Dispaly Data</h3>
+      <br/>
+      <h3>File Upload Using Angular 5</h3>
+      <br/>
+      
+      <br />
+      
+      <table class='table' width="100%">
+        <tr><td>Select Excel File:</td><td align="left"><input #file type="file" multiple (change)="onFileChange($event)" /></td>
+          <td></td><td align="left"><button type="button" class="btn dark btn-outline" style="border:2px solid green"
+          (click)="uploadfile()">
+    Upload
+  </button></td></tr>
+      </table>
+      <table class='table' *ngIf="excelData">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of excelData">
+            <td>{{ d.Id }}</td>
+            <td>{{ d.Name }}</td>
+            <td>{{ d.Email }}</td>
+            <td>{{ d.Mobile }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
